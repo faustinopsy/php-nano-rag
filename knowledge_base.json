@@ -1,7 +1,7 @@
 {
-    "mem_69432a3ef3e543.53664122": {
-        "id": "mem_69432a3ef3e543.53664122",
-        "text": "A história do PHP começou em 1994, quando o programador Rasmus Lerdorf criou uma série de scripts em C para rastrear visitas ao seu currículo online. Ele chamou esses scripts de \"Personal Home Page Tools\" (PHP Tools). Diferente do que muitos pensam, o PHP não foi planejado originalmente para ser uma linguagem de programação completa, mas sim uma ferramenta simples de interface.",
+    "mem_69432c274ad9c1.41834143": {
+        "id": "mem_69432c274ad9c1.41834143",
+        "text": "A história do PHP começou em 1994, quando o programador Rasmus Lerdorf criou uma série de scripts em C para rastrear visitas ao seu currículo online. Ele chamou esses scripts de \"Personal Home Page Tools\" (PHP Tools). Diferente do que muitos pensam, o PHP não foi planejado originalmente para ser uma linguagem de programação completa, mas sim uma ferramenta simples de interface.\r",
         "vector": [
             0.10250736773014069,
             0.3707336485385895,
@@ -775,11 +775,11 @@
         "metadata": {
             "source": "texto sobre php para upload.txt"
         },
-        "created_at": 1766009406
+        "created_at": 1766009895
     },
-    "mem_69432a3f1a7963.46381457": {
-        "id": "mem_69432a3f1a7963.46381457",
-        "text": "Um dos símbolos mais icônicos da comunidade PHP é o ElePHPant, um elefante azul com o logo do PHP escrito na lateral. Esse mascote foi desenhado originalmente por Vincent Pontier em 1998. A ideia surgiu quando Vincent desenhou as letras \"PHP\" em um papel e notou que, vistas de lado, elas formavam o formato de um elefante.",
+    "mem_69432c276492b7.83478803": {
+        "id": "mem_69432c276492b7.83478803",
+        "text": "Um dos símbolos mais icônicos da comunidade PHP é o ElePHPant, um elefante azul com o logo do PHP escrito na lateral. Esse mascote foi desenhado originalmente por Vincent Pontier em 1998. A ideia surgiu quando Vincent desenhou as letras \"PHP\" em um papel e notou que, vistas de lado, elas formavam o formato de um elefante.\r",
         "vector": [
             -0.3300076127052307,
             1.0146387815475464,
@@ -1553,10 +1553,10 @@
         "metadata": {
             "source": "texto sobre php para upload.txt"
         },
-        "created_at": 1766009407
+        "created_at": 1766009895
     },
-    "mem_69432a3f222470.30967108": {
-        "id": "mem_69432a3f222470.30967108",
+    "mem_69432c277c9790.50478080": {
+        "id": "mem_69432c277c9790.50478080",
         "text": "A chegada do PHP 8.0 marcou uma revolução na performance da linguagem com a introdução do compilador JIT (Just In Time). O JIT permite que partes do código sejam compiladas diretamente para linguagem de máquina durante a execução, o que aumentou drasticamente a velocidade de processamento em tarefas matemáticas complexas e aplicações de longa duração.",
         "vector": [
             0.6742091178894043,
@@ -2331,6 +2331,6 @@
         "metadata": {
             "source": "texto sobre php para upload.txt"
         },
-        "created_at": 1766009407
+        "created_at": 1766009895
     }
 }
