@@ -61,9 +61,92 @@ $chatHistory = $shortTerm->getFullHistory();
         .msg-user { background-color: #0d6efd; color: white; margin-left: auto; text-align: right; border-bottom-right-radius: 2px; }
         .msg-assistant { background-color: #e9ecef; color: #333; margin-right: auto; text-align: left; border-bottom-left-radius: 2px; }
         .source-tag { font-size: 0.7em; color: #ccc; display: block; margin-top: 5px; }
+#rag-loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.85); 
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.neural-orbit-loader {
+    position: absolute;
+    top: 28%;
+    left: 45%;
+    width: 120px;
+    height: 120px;
+}
+
+.brain-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #00f2fe 0%, #4facfe 100%); 
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px #00f2fe, 0 0 50px #4facfe; 
+    animation: corePulse 2s ease-in-out infinite;
+}
+
+.orbit-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 242, 254, 0.1); 
+    animation: ringRotate 3s linear infinite;
+}
+
+.data-node {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #a855f7; 
+    border-radius: 50%;
+    box-shadow: 0 0 15px #a855f7;
+}
+.node-1 { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.node-2 { bottom: 0; left: 50%; transform: translate(-50%, 50%); background: #ff0080; box-shadow: 0 0 15px #ff0080; } /* Rosa */
+.node-3 { left: 0; top: 50%; transform: translate(-50%, -50%); }
+.loading-text {
+    position: absolute;
+    top: 18%;
+    left: 43%;
+    margin-top: 30px;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    animation: textFade 2s ease-in-out infinite;
+}
+@keyframes corePulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.8; }
+}
+
+@keyframes ringRotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@keyframes textFade {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
     </style>
 </head>
+
 <body class="p-4">
+
 
 <div class="container">
     <div class="row">
@@ -117,11 +200,61 @@ $chatHistory = $shortTerm->getFullHistory();
         </div>
     </div>
 </div>
-
+<div id="rag-loader-overlay">
+    <div class="neural-orbit-loader">
+        <div class="brain-core"></div>
+        <div class="orbit-ring">
+            <div class="data-node node-1"></div>
+            <div class="data-node node-2"></div>
+            <div class="data-node node-3"></div>
+        </div>
+    </div>
+    <div class="loading-text">PROCESSANDO RAG...</div>
+</div>
 <script>
+   
     var chatBox = document.getElementById("chatBox");
-    chatBox.scrollTop = chatBox.scrollHeight;
-</script>
+    if(chatBox) {
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+    const loader = document.getElementById('rag-loader-overlay');
+    const loadingText = loader.querySelector('.loading-text');
 
+    function showLoader(text) {
+        loadingText.innerText = text;
+        loader.style.display = 'flex';
+    }
+
+    const uploadForm = document.querySelector('form[enctype="multipart/form-data"]');
+    if (uploadForm) {
+        uploadForm.addEventListener('submit', function() {
+            showLoader('ASSIMILANDO CONHECIMENTO...');
+        });
+    }
+
+    const questionInput = document.querySelector('input[name="question"]');
+    if (questionInput) {
+        const chatForm = questionInput.closest('form');
+        if (chatForm) {
+            chatForm.addEventListener('submit', function() {
+                if (questionInput.value.trim() !== '') {
+                    showLoader('ACESSANDO MEMÓRIA & GERANDO RESPOSTA...');
+                }
+            });
+        }
+    }
+    
+    const clearForms = document.querySelectorAll('form:not([enctype])');
+    clearForms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            if (e.submitter && e.submitter.name === 'action') {
+                 showLoader('LIMPANDO DADOS...');
+            }
+        });
+    })
+setTimeout(() => {
+    loader.style.display = 'none';
+}, 2000);
+</script>
 </body>
 </html>
