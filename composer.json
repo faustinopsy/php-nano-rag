@@ -1,0 +1,21 @@
+{
+    "name": "developer/php-nano-rag",
+    "description": "A flat-file Vector Database and RAG engine for PHP.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "faustinopsy",
+            "email": "rodrigohipnose@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "NanoRag\\": "src/"
+        }
+    }
+}
