@@ -1,0 +1,5 @@
+A história do PHP começou em 1994, quando o programador Rasmus Lerdorf criou uma série de scripts em C para rastrear visitas ao seu currículo online. Ele chamou esses scripts de "Personal Home Page Tools" (PHP Tools). Diferente do que muitos pensam, o PHP não foi planejado originalmente para ser uma linguagem de programação completa, mas sim uma ferramenta simples de interface.
+
+Um dos símbolos mais icônicos da comunidade PHP é o ElePHPant, um elefante azul com o logo do PHP escrito na lateral. Esse mascote foi desenhado originalmente por Vincent Pontier em 1998. A ideia surgiu quando Vincent desenhou as letras "PHP" em um papel e notou que, vistas de lado, elas formavam o formato de um elefante.
+
+A chegada do PHP 8.0 marcou uma revolução na performance da linguagem com a introdução do compilador JIT (Just In Time). O JIT permite que partes do código sejam compiladas diretamente para linguagem de máquina durante a execução, o que aumentou drasticamente a velocidade de processamento em tarefas matemáticas complexas e aplicações de longa duração.
