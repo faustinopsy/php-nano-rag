@@ -1,14 +1,8 @@
 <?php
-/**
- * Nano RAG - Demonstration Dashboard
- * * Este arquivo serve como frontend para testar a biblioteca Nano RAG.
- * Ele permite upload de arquivos TXT para "treinar" a IA e uma interface de chat.
- */
-
 require_once __DIR__ . '/vendor/autoload.php';
 
 use NanoRag\LlmClient\OllamaClient;
-use NanoRag\VectorDb\Database;
+use NanoRag\VectorDb\Memory;
 use NanoRag\RagEngine\Brain;
 
 // Aumenta tempo de execução para uploads grandes
@@ -17,20 +11,18 @@ set_time_limit(300);
 // --- Configuração ---
 $dbFile = 'knowledge_base.json';
 $llm = new OllamaClient(embedModel: 'nomic-embed-text', chatModel: 'llama3.2');
-$db = new Database($dbFile);
+$db = new Memory($dbFile);
 $brain = new Brain($llm, $db);
 
 $message = '';
 $answer = '';
 $contextUsed = [];
 
-// --- Lógica de Backend ---
-
 // 1. Limpar Memória
 if (isset($_POST['action']) && $_POST['action'] === 'clear') {
     if (file_exists($dbFile)) {
         unlink($dbFile);
-        header("Refresh:0"); // Recarrega para limpar o objeto da memória
+        header("Refresh:0");
         exit;
     }
 }
