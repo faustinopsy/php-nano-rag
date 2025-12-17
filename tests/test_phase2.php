@@ -23,7 +23,7 @@ try {
         printf("Score: %.4f | Texto: %s\n", $item['score'], $item['text']);
     }
 
-    unlink('json_db_test.json');
+    //unlink('json_db_test.json');
 
     echo "\nFase 2 Concluída: Matemática vetorial e JSON storage funcionando.\n";
 

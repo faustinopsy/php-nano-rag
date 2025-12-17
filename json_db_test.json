@@ -1,0 +1,41 @@
+{
+    "doc_69431f4fd42ff5.12169598": {
+        "id": "doc_69431f4fd42ff5.12169598",
+        "text": "Eu amo programar em PHP Moderno.",
+        "vector": [
+            1,
+            0,
+            0
+        ],
+        "metadata": {
+            "topico": "php"
+        },
+        "created_at": 1766006607
+    },
+    "doc_69431f4fd44841.07722810": {
+        "id": "doc_69431f4fd44841.07722810",
+        "text": "Data Science é forte com Python.",
+        "vector": [
+            0,
+            1,
+            0
+        ],
+        "metadata": {
+            "topico": "python"
+        },
+        "created_at": 1766006607
+    },
+    "doc_69431f4fd459f9.38020064": {
+        "id": "doc_69431f4fd459f9.38020064",
+        "text": "Laravel é um framework PHP incrível.",
+        "vector": [
+            0.9,
+            0.1,
+            0
+        ],
+        "metadata": {
+            "topico": "php"
+        },
+        "created_at": 1766006607
+    }
+}
